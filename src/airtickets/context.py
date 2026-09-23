@@ -11,7 +11,6 @@ class FlightBookingSession:
         self._snapshot: Optional[Flight] = None
 
     def __enter__(self) -> Flight:
-        # Зберігаємо повний знімок стану колекції на момент входу
         self._snapshot = copy.deepcopy(self.flight)
         return self.flight
 
